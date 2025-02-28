@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyamvada - Portfolio</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        body {
+            background-color: #f8e6d8;
+        }
+        .circle {
+            transition: transform 0.3s ease;
+        }
+        .circle:hover {
+            transform: scale(1.1);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div className="min-h-screen p-4 md:p-8 lg:p-16 fade-in">
+                    <div className="max-w-6xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#8B4513] mb-12 text-center">ABOUT ME</h1>
+                        
+                        <div className="flex flex-col md:flex-row gap-8">
+                            {/* About Section */}
+                            <div className="bg-[#f0d4c0] p-6 md:p-8 rounded-3xl md:w-1/2">
+                                <p className="text-[#8B4513] text-lg md:text-xl leading-relaxed text-center">
+                                    Hi, I'm Priyamvada, an IT student passionate about technology and problem-solving. 
+                                    I enjoy building digital solutions, exploring web development, and tackling challenges in data science. 
+                                    With a keen interest in design and coding, I aim to create seamless and user-friendly experiences.
+                                </p>
+                                <div className="mt-6 text-center">
+                                    <p className="text-[#8B4513] text-lg">
+                                        I <i className="bi bi-heart-fill text-[#8B4513]"></i> 
+                                    </p>
+                                    <p className="text-[#8B4513] text-lg">Reading, Travelling, Music</p>
+                                </div>
+                            </div>
+
+                            {/* What I'm Doing Section */}
+                            <div className="bg-[#e8d0c0] p-6 md:p-8 rounded-3xl md:w-1/2">
+                                <h2 className="text-3xl font-semibold text-[#8B4513] mb-8 text-center">What I'm Doing</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center mb-8">
+                                    {['WEB DESIGN', 'WEB DEVELOPMENT', 'DEEP LEARNING'].map((skill) => (
+                                        <div 
+                                            key={skill}
+                                            className="circle bg-[#8B4513] text-white w-32 h-32 rounded-full flex items-center justify-center text-center p-4 cursor-pointer"
+                                        >
+                                            <span className="text-sm font-medium">{skill}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <p className="text-[#8B4513] text-lg text-center italic">
+                                    Crafting digital experiences with passion and precision.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
